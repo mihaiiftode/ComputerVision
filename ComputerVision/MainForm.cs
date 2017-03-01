@@ -103,7 +103,6 @@ namespace ComputerVision
                     var g = (byte) (color.G + delta);
                     var b = (byte) (color.B + delta);
 
-
                     if (color.R + delta > 255) r = byte.MaxValue;
                     else if (color.R + delta < 0) r = byte.MinValue;
                     if (color.G + delta > 255) g = byte.MaxValue;
@@ -152,14 +151,14 @@ namespace ComputerVision
 
             var delta = ContrastTrackBar.Value;
 
-            int aR =  (minR - delta);
-            int bR =  (maxR + delta);
+            int aR = (minR - delta);
+            int bR = (maxR + delta);
 
-            int aB =  (minB - delta);
-            int bB =  (maxB + delta);
+            int aB = (minB - delta);
+            int bB = (maxB + delta);
 
-            int aG =  (minG - delta);
-            int bG =  (maxG + delta);
+            int aG = (minG - delta);
+            int bG = (maxG + delta);
 
             _brightnessWorkImage.Lock();
             _workImage.Lock();
