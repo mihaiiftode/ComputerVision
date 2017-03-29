@@ -32,6 +32,12 @@ namespace ComputerVision
             this.DestinationPanel = new System.Windows.Forms.Panel();
             this.LoadButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MedianButton = new System.Windows.Forms.Button();
+            this.OutlierButton = new System.Windows.Forms.Button();
+            this.FtjUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FtjButton = new System.Windows.Forms.Button();
+            this.TranslationButton = new System.Windows.Forms.Button();
+            this.ReflectionButton = new System.Windows.Forms.Button();
             this.RotateButton = new System.Windows.Forms.Button();
             this.ScalingButton = new System.Windows.Forms.Button();
             this.HistogramaButton = new System.Windows.Forms.Button();
@@ -42,16 +48,23 @@ namespace ComputerVision
             this.NegativePictureButton = new System.Windows.Forms.Button();
             this.GrayscaleButton = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.ReflectionButton = new System.Windows.Forms.Button();
-            this.TranslationButton = new System.Windows.Forms.Button();
+            this.FTSButton = new System.Windows.Forms.Button();
+            this.UnsharpMaskButton = new System.Windows.Forms.Button();
+            this.KirschButton = new System.Windows.Forms.Button();
+            this.Kirch2Button = new System.Windows.Forms.Button();
+            this.LaplaceButton = new System.Windows.Forms.Button();
+            this.RobertsButton = new System.Windows.Forms.Button();
+            this.PrewittButton = new System.Windows.Forms.Button();
+            this.SobelButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FtjUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrightnessTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // SourcePanel
             // 
-            this.SourcePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SourcePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.SourcePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SourcePanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SourcePanel.Location = new System.Drawing.Point(24, 23);
@@ -62,7 +75,7 @@ namespace ComputerVision
             // 
             // DestinationPanel
             // 
-            this.DestinationPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DestinationPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.DestinationPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DestinationPanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DestinationPanel.Location = new System.Drawing.Point(732, 23);
@@ -85,6 +98,10 @@ namespace ComputerVision
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.MedianButton);
+            this.panel1.Controls.Add(this.OutlierButton);
+            this.panel1.Controls.Add(this.FtjUpDown);
+            this.panel1.Controls.Add(this.FtjButton);
             this.panel1.Controls.Add(this.TranslationButton);
             this.panel1.Controls.Add(this.ReflectionButton);
             this.panel1.Controls.Add(this.RotateButton);
@@ -101,6 +118,70 @@ namespace ComputerVision
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1231, 331);
             this.panel1.TabIndex = 3;
+            // 
+            // MedianButton
+            // 
+            this.MedianButton.Location = new System.Drawing.Point(832, 240);
+            this.MedianButton.Name = "MedianButton";
+            this.MedianButton.Size = new System.Drawing.Size(213, 44);
+            this.MedianButton.TabIndex = 27;
+            this.MedianButton.Text = "Median";
+            this.MedianButton.UseVisualStyleBackColor = true;
+            this.MedianButton.Click += new System.EventHandler(this.MedianButton_Click);
+            // 
+            // OutlierButton
+            // 
+            this.OutlierButton.Location = new System.Drawing.Point(832, 160);
+            this.OutlierButton.Name = "OutlierButton";
+            this.OutlierButton.Size = new System.Drawing.Size(213, 44);
+            this.OutlierButton.TabIndex = 26;
+            this.OutlierButton.Text = "Outlier";
+            this.OutlierButton.UseVisualStyleBackColor = true;
+            this.OutlierButton.Click += new System.EventHandler(this.OutlierButton_Click);
+            // 
+            // FtjUpDown
+            // 
+            this.FtjUpDown.Location = new System.Drawing.Point(1071, 98);
+            this.FtjUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.FtjUpDown.Name = "FtjUpDown";
+            this.FtjUpDown.Size = new System.Drawing.Size(120, 31);
+            this.FtjUpDown.TabIndex = 25;
+            // 
+            // FtjButton
+            // 
+            this.FtjButton.Location = new System.Drawing.Point(832, 85);
+            this.FtjButton.Name = "FtjButton";
+            this.FtjButton.Size = new System.Drawing.Size(213, 44);
+            this.FtjButton.TabIndex = 23;
+            this.FtjButton.Text = "FTJ";
+            this.FtjButton.UseVisualStyleBackColor = true;
+            this.FtjButton.Click += new System.EventHandler(this.FtjButton_Click);
+            // 
+            // TranslationButton
+            // 
+            this.TranslationButton.Location = new System.Drawing.Point(599, 240);
+            this.TranslationButton.Margin = new System.Windows.Forms.Padding(6);
+            this.TranslationButton.Name = "TranslationButton";
+            this.TranslationButton.Size = new System.Drawing.Size(213, 44);
+            this.TranslationButton.TabIndex = 22;
+            this.TranslationButton.Text = "Translation";
+            this.TranslationButton.UseVisualStyleBackColor = true;
+            this.TranslationButton.Click += new System.EventHandler(this.TranslationButton_Click);
+            // 
+            // ReflectionButton
+            // 
+            this.ReflectionButton.Location = new System.Drawing.Point(832, 15);
+            this.ReflectionButton.Margin = new System.Windows.Forms.Padding(6);
+            this.ReflectionButton.Name = "ReflectionButton";
+            this.ReflectionButton.Size = new System.Drawing.Size(213, 44);
+            this.ReflectionButton.TabIndex = 21;
+            this.ReflectionButton.Text = "Reflexion";
+            this.ReflectionButton.UseVisualStyleBackColor = true;
+            this.ReflectionButton.Click += new System.EventHandler(this.ReflectionButton_Click);
             // 
             // RotateButton
             // 
@@ -199,33 +280,99 @@ namespace ComputerVision
             this.GrayscaleButton.UseVisualStyleBackColor = true;
             this.GrayscaleButton.Click += new System.EventHandler(this.buttonGrayscale_Click);
             // 
-            // ReflectionButton
+            // FTSButton
             // 
-            this.ReflectionButton.Location = new System.Drawing.Point(832, 15);
-            this.ReflectionButton.Margin = new System.Windows.Forms.Padding(6);
-            this.ReflectionButton.Name = "ReflectionButton";
-            this.ReflectionButton.Size = new System.Drawing.Size(213, 44);
-            this.ReflectionButton.TabIndex = 21;
-            this.ReflectionButton.Text = "Reflexion";
-            this.ReflectionButton.UseVisualStyleBackColor = true;
-            this.ReflectionButton.Click += new System.EventHandler(this.ReflectionButton_Click);
+            this.FTSButton.Location = new System.Drawing.Point(1377, 23);
+            this.FTSButton.Name = "FTSButton";
+            this.FTSButton.Size = new System.Drawing.Size(213, 44);
+            this.FTSButton.TabIndex = 28;
+            this.FTSButton.Text = "FTS";
+            this.FTSButton.UseVisualStyleBackColor = true;
+            this.FTSButton.Click += new System.EventHandler(this.FTSButton_Click);
             // 
-            // TranslationButton
+            // UnsharpMaskButton
             // 
-            this.TranslationButton.Location = new System.Drawing.Point(599, 240);
-            this.TranslationButton.Margin = new System.Windows.Forms.Padding(6);
-            this.TranslationButton.Name = "TranslationButton";
-            this.TranslationButton.Size = new System.Drawing.Size(213, 44);
-            this.TranslationButton.TabIndex = 22;
-            this.TranslationButton.Text = "Translation";
-            this.TranslationButton.UseVisualStyleBackColor = true;
-            this.TranslationButton.Click += new System.EventHandler(this.TranslationButton_Click);
+            this.UnsharpMaskButton.Location = new System.Drawing.Point(1377, 98);
+            this.UnsharpMaskButton.Name = "UnsharpMaskButton";
+            this.UnsharpMaskButton.Size = new System.Drawing.Size(213, 44);
+            this.UnsharpMaskButton.TabIndex = 29;
+            this.UnsharpMaskButton.Text = "Unsharp Mask";
+            this.UnsharpMaskButton.UseVisualStyleBackColor = true;
+            this.UnsharpMaskButton.Click += new System.EventHandler(this.UnsharpMaskButton_Click);
+            // 
+            // KirschButton
+            // 
+            this.KirschButton.Location = new System.Drawing.Point(1377, 179);
+            this.KirschButton.Name = "KirschButton";
+            this.KirschButton.Size = new System.Drawing.Size(213, 44);
+            this.KirschButton.TabIndex = 30;
+            this.KirschButton.Text = "Kirsch 1";
+            this.KirschButton.UseVisualStyleBackColor = true;
+            this.KirschButton.Click += new System.EventHandler(this.KirschButton_Click);
+            // 
+            // Kirch2Button
+            // 
+            this.Kirch2Button.Location = new System.Drawing.Point(1377, 256);
+            this.Kirch2Button.Name = "Kirch2Button";
+            this.Kirch2Button.Size = new System.Drawing.Size(213, 44);
+            this.Kirch2Button.TabIndex = 31;
+            this.Kirch2Button.Text = "Kirsch 2";
+            this.Kirch2Button.UseVisualStyleBackColor = true;
+            this.Kirch2Button.Click += new System.EventHandler(this.Kirch2Button_Click);
+            // 
+            // LaplaceButton
+            // 
+            this.LaplaceButton.Location = new System.Drawing.Point(1377, 326);
+            this.LaplaceButton.Name = "LaplaceButton";
+            this.LaplaceButton.Size = new System.Drawing.Size(213, 44);
+            this.LaplaceButton.TabIndex = 32;
+            this.LaplaceButton.Text = "Laplace";
+            this.LaplaceButton.UseVisualStyleBackColor = true;
+            this.LaplaceButton.Click += new System.EventHandler(this.LaplaceButton_Click);
+            // 
+            // RobertsButton
+            // 
+            this.RobertsButton.Location = new System.Drawing.Point(1377, 390);
+            this.RobertsButton.Name = "RobertsButton";
+            this.RobertsButton.Size = new System.Drawing.Size(213, 44);
+            this.RobertsButton.TabIndex = 33;
+            this.RobertsButton.Text = "Roberts";
+            this.RobertsButton.UseVisualStyleBackColor = true;
+            this.RobertsButton.Click += new System.EventHandler(this.RobertsButton_Click);
+            // 
+            // PrewittButton
+            // 
+            this.PrewittButton.Location = new System.Drawing.Point(1377, 459);
+            this.PrewittButton.Name = "PrewittButton";
+            this.PrewittButton.Size = new System.Drawing.Size(213, 44);
+            this.PrewittButton.TabIndex = 34;
+            this.PrewittButton.Text = "Prewitt";
+            this.PrewittButton.UseVisualStyleBackColor = true;
+            this.PrewittButton.Click += new System.EventHandler(this.PrewittButton_Click);
+            // 
+            // SobelButton
+            // 
+            this.SobelButton.Location = new System.Drawing.Point(1377, 530);
+            this.SobelButton.Name = "SobelButton";
+            this.SobelButton.Size = new System.Drawing.Size(213, 44);
+            this.SobelButton.TabIndex = 35;
+            this.SobelButton.Text = "Sobel";
+            this.SobelButton.UseVisualStyleBackColor = true;
+            this.SobelButton.Click += new System.EventHandler(this.SobelButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 921);
+            this.ClientSize = new System.Drawing.Size(1874, 942);
+            this.Controls.Add(this.SobelButton);
+            this.Controls.Add(this.PrewittButton);
+            this.Controls.Add(this.RobertsButton);
+            this.Controls.Add(this.LaplaceButton);
+            this.Controls.Add(this.Kirch2Button);
+            this.Controls.Add(this.KirschButton);
+            this.Controls.Add(this.UnsharpMaskButton);
+            this.Controls.Add(this.FTSButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LoadButton);
             this.Controls.Add(this.DestinationPanel);
@@ -235,6 +382,7 @@ namespace ComputerVision
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FtjUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrastTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrightnessTrackBar)).EndInit();
             this.ResumeLayout(false);
@@ -259,6 +407,18 @@ namespace ComputerVision
         private System.Windows.Forms.Button RotateButton;
         private System.Windows.Forms.Button ReflectionButton;
         private System.Windows.Forms.Button TranslationButton;
+        private System.Windows.Forms.Button FtjButton;
+        private System.Windows.Forms.NumericUpDown FtjUpDown;
+        private System.Windows.Forms.Button OutlierButton;
+        private System.Windows.Forms.Button MedianButton;
+        private System.Windows.Forms.Button FTSButton;
+        private System.Windows.Forms.Button UnsharpMaskButton;
+        private System.Windows.Forms.Button KirschButton;
+        private System.Windows.Forms.Button Kirch2Button;
+        private System.Windows.Forms.Button LaplaceButton;
+        private System.Windows.Forms.Button RobertsButton;
+        private System.Windows.Forms.Button PrewittButton;
+        private System.Windows.Forms.Button SobelButton;
     }
 }
 
